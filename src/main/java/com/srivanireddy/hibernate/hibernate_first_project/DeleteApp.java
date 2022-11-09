@@ -5,28 +5,29 @@ import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
 import com.srivanireddy.entity.Song;
+import com.srivanireddy.utils.HibernateUtils;
 
 public class DeleteApp {
 
 public static void main(String[] args) {
 		
-		//id-1 song name has to be update to TELUSA TELUSA
+		//id-2 row has to be deleted
 		
-		Configuration configuration = new Configuration();
-		configuration.configure();
-		configuration.addAnnotatedClass(Song.class);
+		SessionFactory sessionFactory = HibernateUtils.getSessionFactory();
 		
-		SessionFactory buildSessionFactory = configuration.buildSessionFactory();
 		
-		Session session = buildSessionFactory.openSession();
-		
-		Song song = session.load(Song.class, 2);
-		
-		session.beginTransaction();
-		session.delete(song);
-		session.getTransaction().commit();
-		
-		session.close();
+		if(sessionFactory != null)
+    	{
+			Session session = sessionFactory.openSession();
+			
+			Song song = session.load(Song.class, 2);
+			
+			session.beginTransaction();
+			session.delete(song);
+			session.getTransaction().commit();
+			
+			session.close();
+    	}
 
 	}
 
