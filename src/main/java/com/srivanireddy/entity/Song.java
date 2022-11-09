@@ -1,10 +1,13 @@
-package com.srivanireddy.hibernate.hibernate_first_project;
+package com.srivanireddy.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+//if table name different from class name use @Table(name = "table name in db")
+@Table(name = "Song")
 public class Song {
 
 	//songId, songName, singer
@@ -38,6 +41,10 @@ public class Song {
 		this.singer = singer;
 	}
 	
+	@Override
+	public String toString() {
+		return "Song [id=" + id + ", name=" + name + ", singer=" + singer + "]";
+	}
 	
-	
+
 }
