@@ -21,9 +21,10 @@ public class CreateApp
 	    	Session session = sessionFactory.openSession();
 	    	
 	        Song song_1 = new Song();
-	        song_1.setId(1);
-	        song_1.setName("Telusa Telusa");
-	        song_1.setSinger("Revanth");
+	        // ID is generated dynamically. MYSQL db will auto increment ID and @GenerateValue annotation used in Song.java entity
+	        //song_1.setId(1);
+	        song_1.setName("song 2");
+	        song_1.setSinger("singer 2");
 	        
 	        session.beginTransaction();
 	        session.save(song_1);

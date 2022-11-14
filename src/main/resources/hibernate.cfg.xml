@@ -21,6 +21,9 @@
 		<!-- show sql -->
 		<property name="hibernate.show_sql">true</property>
 		
+		<!-- format sql -->
+		<property name="hibernate.format_sql">true</property>
+		
 	</session-factory>
 
 </hibernate-configuration>
