@@ -35,7 +35,7 @@ public class UpdateApp {
 			
 			
 			// So instead of creating a new object as above load the object from db and update the column val you want to 
-			Song song = session.load(Song.class, 1);
+			Song song = session.get(Song.class, 1);
 			song.setName("TELUSA TELUSA");
 			
 			session.beginTransaction();

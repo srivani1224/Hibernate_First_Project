@@ -20,7 +20,7 @@ public static void main(String[] args) {
     	{
 			Session session = sessionFactory.openSession();
 			
-			Song song = session.load(Song.class, 2);
+			Song song = session.get(Song.class, 2);
 			
 			session.beginTransaction();
 			session.delete(song);
