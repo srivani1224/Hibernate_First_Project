@@ -3,7 +3,9 @@ package com.srivanireddy.utils;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
+import com.srivanireddy.entity.Laptop;
 import com.srivanireddy.entity.Song;
+import com.srivanireddy.entity.Student;
 
 public class HibernateUtils {
 
@@ -23,6 +25,8 @@ public class HibernateUtils {
 		    	// need to specify file name in configure function ex : configuration.configure("myhibernate.cfg.xml");
 		    	configuration.configure();
 		    	configuration.addAnnotatedClass(Song.class);
+		    	configuration.addAnnotatedClass(Student.class);
+		    	configuration.addAnnotatedClass(Laptop.class);
 		    	
 		    	//create session factory
 		    	sessionFactory = configuration.buildSessionFactory();
