@@ -29,10 +29,11 @@ public class MappingApp {
 	        student.setStudentId(3);
 	        student.setStudentName("Harish");
 	        student.setStudentMarks(30);
-	        student.setLaptop(laptop);
 	        
-	        session.save(student);
+	        student.setLaptop(laptop);
+
 	        session.save(laptop);
+	        session.save(student);
 	        
 	        session.getTransaction().commit();   
 	        session.close();

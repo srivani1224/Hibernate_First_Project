@@ -20,7 +20,7 @@ public class Student {
 	@Column(name = "studentMarks")
 	public int studentMarks;
 	
-	@OneToOne
+	@OneToOne(targetEntity = Laptop.class)
 	public Laptop laptop;
 
 
