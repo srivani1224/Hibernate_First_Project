@@ -15,7 +15,7 @@ public class Laptop {
 	
 	@Column(name="laptopName")
 	public String laptopName;
-
+	
 	public int getLaptopId() {
 		return laptopId;
 	}

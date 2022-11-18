@@ -28,26 +28,24 @@ public class MappingApp {
 	        List<Laptop> laptopList = new ArrayList<>();
 	        
 	    	Laptop laptop1 = new Laptop();
-	    	laptop1.setLaptopId(104);
-	    	laptop1.setLaptopName("lap-1");
-	    	
-	    	session.save(laptop1);
-	    	laptopList.add(laptop1);
+	    	laptop1.setLaptopId(106);
+	    	laptop1.setLaptopName("lap-3");
 	    	
 	    	Laptop laptop2 = new Laptop();
-	    	laptop2.setLaptopId(105);
-	    	laptop2.setLaptopName("lap-2");
-	    	
-	    	session.save(laptop2);
-	    	laptopList.add(laptop2);
+	    	laptop2.setLaptopId(107);
+	    	laptop2.setLaptopName("lap-4");
 	    	
 	        Student student = new Student();
-	        student.setStudentId(4);
-	        student.setStudentName("Adarsh");
+	        student.setStudentId(3);
+	        student.setStudentName("Harish");
 	        student.setStudentMarks(90);
-	
+	        
+	    	laptopList.add(laptop1);
+	    	laptopList.add(laptop2);
 	        student.setLaptop(laptopList);
 
+	    	session.save(laptop1);
+	    	session.save(laptop2);
 	        session.save(student);
 	        
 	        session.getTransaction().commit();   
