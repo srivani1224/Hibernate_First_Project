@@ -1,8 +1,12 @@
 package com.srivanireddy.entity;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -20,8 +24,8 @@ public class Student {
 	@Column(name = "studentMarks")
 	public int studentMarks;
 	
-	@OneToOne(targetEntity = Laptop.class)
-	public Laptop laptop;
+	@OneToMany(targetEntity = Laptop.class)
+	public List<Laptop> laptop = new ArrayList<>();
 
 
 	public int getStudentId() {
@@ -48,12 +52,11 @@ public class Student {
 		this.studentMarks = studentMarks;
 	}
 
-	
-	public Laptop getLaptop() {
+	public List<Laptop> getLaptop() {
 		return laptop;
 	}
 
-	public void setLaptop(Laptop laptop) {
+	public void setLaptop(List<Laptop> laptop) {
 		this.laptop = laptop;
 	}
 

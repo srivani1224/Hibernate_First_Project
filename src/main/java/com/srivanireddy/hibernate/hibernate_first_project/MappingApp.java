@@ -1,5 +1,8 @@
 package com.srivanireddy.hibernate.hibernate_first_project;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
@@ -21,18 +24,30 @@ public class MappingApp {
 	    	Session session = sessionFactory.openSession();
 	        session.beginTransaction();
 	        
-	    	Laptop laptop = new Laptop();
-	    	laptop.setLaptopId(103);
-	    	laptop.setLaptopName("MacBook");
+	        
+	        List<Laptop> laptopList = new ArrayList<>();
+	        
+	    	Laptop laptop1 = new Laptop();
+	    	laptop1.setLaptopId(104);
+	    	laptop1.setLaptopName("lap-1");
+	    	
+	    	session.save(laptop1);
+	    	laptopList.add(laptop1);
+	    	
+	    	Laptop laptop2 = new Laptop();
+	    	laptop2.setLaptopId(105);
+	    	laptop2.setLaptopName("lap-2");
+	    	
+	    	session.save(laptop2);
+	    	laptopList.add(laptop2);
 	    	
 	        Student student = new Student();
-	        student.setStudentId(3);
-	        student.setStudentName("Harish");
-	        student.setStudentMarks(30);
-	        
-	        student.setLaptop(laptop);
+	        student.setStudentId(4);
+	        student.setStudentName("Adarsh");
+	        student.setStudentMarks(90);
+	
+	        student.setLaptop(laptopList);
 
-	        session.save(laptop);
 	        session.save(student);
 	        
 	        session.getTransaction().commit();   
